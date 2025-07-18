@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickMeet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center h-screen">
+  <h1 class="text-4xl font-bold mb-6">QuickMeet</h1>
+
+  <!-- Buttons -->
+  <div class="flex flex-col items-center space-y-4 w-full max-w-md px-4">
+    <button id="create-room" class="bg-blue-600 px-6 py-3 rounded text-lg hover:bg-blue-700 w-full">
+      Create Room
+    </button>
+    <button id="join-room" class="bg-green-600 px-6 py-3 rounded text-lg hover:bg-green-700 w-full">
+      Join Room
+    </button>
+  </div>
+
+  <!-- Preview Modal -->
+  <div id="preview" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+    <div class="bg-gray-800 p-6 rounded-lg w-full max-w-md text-center">
+      <h2 class="text-xl mb-4">Preview & Settings</h2>
+      <video id="preview-video" autoplay playsinline muted class="rounded w-full bg-black aspect-video"></video>
+      <div class="flex justify-center space-x-4 mt-4">
+        <button id="toggle-mic" class="bg-gray-700 px-4 py-2 rounded">🎤</button>
+        <button id="toggle-cam" class="bg-gray-700 px-4 py-2 rounded">📷</button>
+      </div>
+      <button id="start-now" class="bg-blue-600 mt-4 px-6 py-2 rounded">Start Now</button>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

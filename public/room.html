@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickMeet Room</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gray-900 text-white flex flex-col h-screen">
+  <div id="video-grid" class="flex-1 grid p-2 bg-black grid-1"></div>
+
+  <!-- Glass Control Bar -->
+  <div class="control-bar">
+    <button id="toggle-mic" class="control-btn" data-tooltip="Mute/Unmute Mic">🎤</button>
+    <button id="toggle-cam" class="control-btn" data-tooltip="Toggle Camera">📷</button>
+    <button id="share-screen" class="control-btn" data-tooltip="Share Screen">🖥️</button>
+    <button id="send-reaction" class="control-btn" data-tooltip="Send Reaction">😊</button>
+    <button id="chat-toggle" class="control-btn" data-tooltip="Chat">💬</button>
+    <button id="end-call" class="control-btn" style="background:#dc2626" data-tooltip="End Call">⏹</button>
+  </div>
+
+  <!-- Reaction Picker -->
+  <div id="reaction-picker" class="hidden fixed bottom-28 bg-gray-800 p-2 rounded shadow-lg flex gap-3">
+    <span class="emoji-option cursor-pointer">👍</span>
+    <span class="emoji-option cursor-pointer">😂</span>
+    <span class="emoji-option cursor-pointer">👏</span>
+    <span class="emoji-option cursor-pointer">🔥</span>
+    <span class="emoji-option cursor-pointer">❤️</span>
+  </div>
+
+  <!-- Chat Panel -->
+  <div id="chat-panel">
+    <div class="flex-1 overflow-y-auto mb-2" id="chat-messages"></div>
+    <input id="chat-input" type="text" placeholder="Type message..." class="p-2 rounded bg-gray-700 text-white w-full">
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/room.js"></script>
+</body>
+</html>
